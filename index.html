@@ -62,7 +62,7 @@
       </div>
   </div>
 </section>
-<section>
+<section class="w-[80%] bg-base-100 shadow-xl  justify-between border-base-200 mt-7 rounded-lg p-5 mx-auto">
   <div class="card w-96 bg-base-100 shadow-sm">
   <div class="card-body">
     
@@ -83,6 +83,53 @@
     <p>  #1 by john_doe</p>
     <p>1/15/2024</p>
 </div>
+
+</section>
+<section>
+  <!-- Open the modal using ID.showModal() method -->
+   <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box max-w-2xl">
+    
+    <h3 class="text-2xl font-bold text-black">Fix broken image uploads</h3>
+    
+    <div class="mt-2 mb-4">
+      <div class="badge badge-success text-white font-bold p-3">Opened</div>
+      <span class="text-gray-500 ml-2"> • Opened by Fahim Ahmed • 22/02/2026</span>
+    </div>
+
+    <div class="mb-6">
+      <div class="badge badge-outline bg-red-50 text-red-500 border-red-200 p-3 font-bold">
+        <i class="fa-solid fa-bug mr-2"></i> BUG
+      </div>
+      <div class="badge badge-outline bg-yellow-50 text-yellow-600 border-yellow-300 p-3 font-bold ml-2">
+        <i class="fa-solid fa-life-ring mr-2"></i> HELP WANTED
+      </div>
+    </div>
+
+    <p class="text-gray-500 text-lg mb-4">
+      The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.
+    </p>
+
+    <div class="bg-gray-100 p-4 rounded-xl flex justify-between mt-6">
+      <div>
+        <p class="text-gray-500 text-sm">Assignee:</p>
+        <p class="font-bold text-black text-xl">Fahim Ahmed</p>
+      </div>
+      <div class="text-right">
+        <p class="text-gray-500 text-sm">Priority:</p>
+        <div class="badge bg-red-500 text-white font-bold border-none p-3">HIGH</div>
+      </div>
+    </div>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn bg-purple-600 hover:bg-purple-700 text-white border-none w-24">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 </section>
 </body>
 </html>
