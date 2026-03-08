@@ -8,8 +8,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <div class="navbar bg-base-100 shadow-sm">
+<body class="bg-base-200">
+<nav class=" w-full navbar bg-base-100 shadow-sm">
   <div class="flex-1 flex items-center gap-2">
     <img src="./assets/github-logo.png" alt="">
     <a class="btn btn-ghost text-xl">GitHub Issues Tracker</a>
@@ -28,10 +28,18 @@
       <path d="m21 21-4.3-4.3"></path>
     </g>
   </svg>
-  <input type="search" required placeholder="Search" />
+  <input type="search" required placeholder="Search issues..." />
 </label>
     <button class="btn btn-primary"><i class="fa-solid fa-plus"></i>New Issue</button>
   </div>
-</div>
+
+</nav>
+<section class="w-[80%] bg-base-100 shadow-xl  border-base-200 mt-7 rounded-lg p-5 mx-auto">
+  <div class="flex items-center gap-3 mb-4">
+    <button class="btn btn-active btn-primary">Open</button>
+    <button class="btn btn-active btn-primary">Closed</button>
+    <button class="btn btn-active btn-primary">All</button>
+  </div>
+</section>
 </body>
 </html>
