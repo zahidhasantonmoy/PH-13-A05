@@ -62,27 +62,57 @@
       </div>
   </div>
 </section>
-<section class="w-[80%] bg-base-100 shadow-xl  justify-between border-base-200 mt-7 rounded-lg p-5 mx-auto">
-  <div class="card w-96 bg-base-100 shadow-sm">
-  <div class="card-body">
-    
-    <div class="flex justify-between">
-      <img src="./assets/Closed- Status .png" alt="">
-      <span class="badge badge-xl bg-[#EF4444]">High</span>
+<section class="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+  
+  <div class="card bg-base-100 shadow-sm border-t-4 border-green-500 rounded-lg">
+    <div class="card-body p-5">
+      
+      <div class="flex justify-between items-center mb-2">
+       <img src="./assets/Closed- Status .png" alt="">
+        <span class="badge bg-red-100 text-red-500 font-bold border-none px-3 py-3">High</span>
+      </div>
+      
+      <h2 class="card-title text-[16px] leading-tight">Fix navigation menu on mobile devices</h2>
+      <p class="text-gray-500 text-sm mt-2">The navigation menu doesn't collapse properly on mobile devices...</p>
+      
+      <div class="flex gap-2 mt-4">
+         <span class="badge bg-red-50 text-red-500 border-red-200 font-bold p-3">
+            <i class="fa-solid fa-bug mr-1"></i> Bug
+         </span>
+         <span class="badge bg-yellow-50 text-yellow-600 border-yellow-200 font-bold p-3">
+            <i class="fa-solid fa-life-ring mr-1"></i> Help Wanted
+         </span>
+      </div>
     </div>
-  <div class="card-title">Fix navigation menu on mobile devices</div>
-    <p>The navigation menu doesn't collapse properly on mobile devices...</p>
-  <div class="gap-4">
-     <span class="badge badge-xl bg-[#FECACA] rounded-lg"><i class="fa-solid fa-bug"></i>Bug</span>
-      <span class="badge badge-xl bg-[#D97706]"><i class="fa-solid fa-question-circle"></i>help wanted</span>
+    
+    <div class="bg-gray-50 p-4 border-t border-gray-100 text-sm text-gray-500 rounded-b-lg">
+      <p>#1 by john_doe</p>
+      <p>1/15/2024</p>
+    </div>
+  </div>
 
+  <div class="card bg-base-100 shadow-sm border-t-4 border-green-500 rounded-lg">
+    <div class="card-body p-5">
+      <div class="flex justify-between items-center mb-2">
+        <img src="./assets/Open-Status.png" alt="">
+        <span class="badge bg-yellow-100 text-yellow-600 font-bold border-none px-3 py-3">Medium</span>
+      </div>
+      <h2 class="card-title text-[16px] leading-tight">Fix navigation menu on mobile devices</h2>
+      <p class="text-gray-500 text-sm mt-2">The navigation menu doesn't collapse properly on mobile devices...</p>
+      <div class="flex gap-2 mt-4">
+         <span class="badge bg-red-50 text-red-500 border-red-200 font-bold p-3">
+            <i class="fa-solid fa-bug mr-1"></i> Bug
+         </span>
+         <span class="badge bg-yellow-50 text-yellow-600 border-yellow-200 font-bold p-3">
+            <i class="fa-solid fa-life-ring mr-1"></i> Help Wanted
+         </span>
+      </div>
+    </div>
+    <div class="bg-gray-50 p-4 border-t border-gray-100 text-sm text-gray-500 rounded-b-lg">
+      <p>#2 by jane_doe</p>
+      <p>1/15/2024</p>
+    </div>
   </div>
-  </div>
-  <div class="divider"> </div>
-  <div class="card w-96 bg-base-100 shadow-sm mt-1 justify-between p-6">
-    <p>  #1 by john_doe</p>
-    <p>1/15/2024</p>
-</div>
 
 </section>
 <section>
@@ -131,5 +161,6 @@
   </div>
 </dialog>
 </section>
+<script src="script.js"></script>
 </body>
 </html>
