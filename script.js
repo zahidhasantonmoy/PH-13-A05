@@ -9,22 +9,33 @@ function toggleButton(value) {
         closedBtn.classList.remove('btn-primary');
         
         displayIssues(allData);
-        
     } else if (value === 'open-btn') {
         openBtn.classList.add('btn-primary');
         allBtn.classList.remove('btn-primary');
         closedBtn.classList.remove('btn-primary');
         
-       
+        let openData = [];
+        for (let item of allData) {
+            if (item.status === 'open') {
+                openData.push(item);
+            }
+        }
+        displayIssues(openData);
     } else if (value === 'closed-btn') {
         closedBtn.classList.add('btn-primary');
         allBtn.classList.remove('btn-primary');
         openBtn.classList.remove('btn-primary');
         
-        
+        let closedData = [];
+        for (let item of allData) {
+            if (item.status === 'closed') {
+                closedData.push(item);
+            }
         }
         displayIssues(closedData);
     }
+}
+
 
 
 
@@ -82,13 +93,16 @@ function displayIssues(issues) {
             let labelClass = "bg-gray-100 text-gray-700 border-gray-200";
             
             if (label === "bug") {
-                labelClass = "bg-red-50 text-red-500 border-red-200";
+                labelClass = "bg-[#FECACA] text-[#EF4444] border-red-200";
             } else if (label === "help wanted") {
-                labelClass = "bg-yellow-50 text-yellow-600 border-yellow-200";
+                labelClass = "bg-[#FDE68A] text-[#D97706] border-yellow-200";
             } else if (label === "enhancement") {
-                labelClass = "bg-green-50 text-green-600 border-green-200";
+                labelClass = "bg-[#BBF7D0] text-[#00A96E] border-green-200";
             } else if (label === "documentation") {
-                labelClass = "bg-blue-50 text-blue-600 border-blue-200";
+                labelClass = "bg-[#FDE68A] text-[#D97706] border-blue-200";
+            }
+            else{
+                labelClass = "bg-blue-100 text-blue-700 border-gray-200";
             }
             
             labelsHTML = labelsHTML + `<span class="badge ${labelClass} font-bold p-3 capitalize border">${label}</span> `;
@@ -123,3 +137,5 @@ function displayIssues(issues) {
         container.innerHTML = container.innerHTML + cardHTML;
     }
 }
+
+toggleButton('all-btn');
