@@ -92,24 +92,31 @@ function displayIssues(issues) {
             priorityClass = "bg-gray-100 text-gray-700";
         }
 
-        let labelsHTML = "";
-        for (let label of isshue.labels) {
+         let labelsHTML = "";
+           for (let label of isshue.labels) {
             let labelClass = "bg-gray-100 text-gray-700 border-gray-200";
+            let icon = "";
             
             if (label === "bug") {
-                labelClass = "bg-[#FECACA] text-[#EF4444] border-red-200";
+                labelClass = "bg-[#FECACA] text-[#EF4444] border-red-200 ";
+                icon = '<i class="fa-solid fa-bug mr-1"></i> ';
             } else if (label === "help wanted") {
                 labelClass = "bg-[#FDE68A] text-[#D97706] border-yellow-200";
+                icon = '<i class="fa-solid fa-life-ring mr-1"></i> ';
             } else if (label === "enhancement") {
                 labelClass = "bg-[#BBF7D0] text-[#00A96E] border-green-200";
+                icon = '<i class="fa-solid fa-rocket mr-1"></i> ';
             } else if (label === "documentation") {
                 labelClass = "bg-[#FDE68A] text-[#D97706] border-blue-200";
-            }
-            else{
+                icon = '<i class="fa-solid fa-file-lines mr-1"></i> ';
+            } else if (label === "good first issue") {
+                labelClass = "bg-purple-100 text-purple-700 border-purple-200";
+                icon = '<i class="fa-solid fa-thumbs-up mr-1"></i> ';
+            } else {
                 labelClass = "bg-blue-100 text-blue-700 border-gray-200";
             }
             
-            labelsHTML = labelsHTML + `<span class="badge ${labelClass} font-bold p-3 capitalize border">${label}</span> `;
+            labelsHTML = labelsHTML + `<span class="badge ${labelClass} font-bold p-3 capitalize border">${icon}${label}</span> `;
         }
 
         const cardHTML = `
