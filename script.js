@@ -3,6 +3,8 @@ function toggleButton(value) {
     const openBtn = document.getElementById('open-btn');
     const closedBtn = document.getElementById('closed-btn');
     
+    document.getElementById('issues-container').innerHTML = '<div class="flex justify-center col-span-4 my-10"><span class="loading loading-bars loading-xl text-primary"></span></div>';
+
     if (value === 'all-btn') {
         allBtn.classList.add('btn-primary');
         openBtn.classList.remove('btn-primary');
@@ -42,6 +44,8 @@ function toggleButton(value) {
 let allData = [];
 
 const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
+
+document.getElementById('issues-container').innerHTML = '<div class="flex justify-center col-span-4 my-10"><span class="loading loading-bars loading-xl text-primary"></span></div>';
 
 fetch(url)
     .then(response => response.json())
@@ -142,9 +146,14 @@ toggleButton('all-btn');
 
 
 function searchIssues(searchText) {
-    
+    if (searchText === "") {
+        displayIssues(allData);
+        return;
+    }
 
     const searchUrl = "https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=" + searchText;
+    
+    document.getElementById('issues-container').innerHTML = '<div class="flex justify-center col-span-4 my-10"><span class="loading loading-bars loading-xl text-primary"></span></div>';
 
     fetch(searchUrl)
         .then(response => response.json())
