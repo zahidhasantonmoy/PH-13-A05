@@ -2,7 +2,7 @@
 1️⃣ What is the difference between var, let, and const?
 
 
-Answer: var Cannot be reassign But it can be changed the value, and let can be reassign and also can be changed the value, But the const cannot be reassign and also cannot be change the value .
+Answer: var can be reassign and  its value can be changed the value, and let can be reassign and also can be changed the value, But the const cannot be reassign and also cannot be change the value .
 
 
 2️⃣ What is the spread operator (...)?

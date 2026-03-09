@@ -113,7 +113,7 @@ function displayIssues(issues) {
         }
 
         const cardHTML = `
-        <div class="card bg-white shadow-md rounded-lg mb-4 border-t-4 ${borderColor}">
+        <div onclick="openModal(${isshue.id})" class="card bg-white shadow-md rounded-lg mb-4 border-t-4 ${borderColor} cursor-pointer">
             <div class="card-body p-5">
               
               <div class="flex justify-between items-center mb-2">
@@ -163,4 +163,65 @@ function searchIssues(searchText) {
         .catch(error => {
             console.log('Error:', error);
         });
+}
+
+
+function openModal(id) {
+    const url = "https://phi-lab-server.vercel.app/api/v1/lab/issue/" + id;
+    
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            let isshue = data.data;
+            let formattedDate = new Date(isshue.createdAt).toLocaleDateString();
+
+            let labelsHTML = "";
+            for (let label of isshue.labels) {
+                labelsHTML = labelsHTML + `<div class="badge badge-outline p-3 font-bold mr-2 uppercase">${label}</div>`;
+            }
+
+            let assigneeName = isshue.assignee;
+            if (assigneeName === "") {
+                assigneeName = "Not Assigned";
+            }
+
+            let modalBox = document.querySelector('#my_modal_5 .modal-box');
+            
+            modalBox.innerHTML = `
+                <h3 class="text-2xl font-bold text-black">${isshue.title}</h3>
+                
+                <div class="mt-2 mb-4">
+                  <div class="badge badge-success text-white font-bold p-3 uppercase">${isshue.status}</div>
+                  <span class="text-gray-500 ml-2"> • Opened by ${isshue.author} • ${formattedDate}</span>
+                </div>
+
+                <div class="mb-6">
+                  ${labelsHTML}
+                </div>
+
+                <p class="text-gray-500 text-lg mb-4">
+                  ${isshue.description}
+                </p>
+
+                <div class="bg-gray-100 p-4 rounded-xl flex justify-between mt-6">
+                  <div>
+                    <p class="text-gray-500 text-sm">Assignee:</p>
+                    <p class="font-bold text-black text-xl">${assigneeName}</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-gray-500 text-sm">Priority:</p>
+                    <div class="badge bg-red-500 text-white font-bold border-none p-3 uppercase">${isshue.priority}</div>
+                  </div>
+                </div>
+
+                <div class="modal-action">
+                  <form method="dialog">
+                    <button class="btn bg-purple-600 hover:bg-purple-700 text-white border-none w-24">Close</button>
+                  </form>
+                </div>
+            `;
+            
+            document.getElementById('my_modal_5').showModal();
+        })
+        
 }
