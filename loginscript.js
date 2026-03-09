@@ -6,7 +6,7 @@ console.log("Login script loaded");
 
      if(username === "admin" && password === "admin123") {
         
-            window.location.href = "index.html";
+            window.location.href = "home.html";
      } else {
          alert("Invalid credentials. Please try again.");
      }
